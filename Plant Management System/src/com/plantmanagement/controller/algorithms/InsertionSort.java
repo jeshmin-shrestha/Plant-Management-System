@@ -9,8 +9,9 @@ public class InsertionSort {
     /**
      * Sorts a list of PlantModel objects by price using Insertion Sort.
      *
-     * @param plantList   The list of PlantModel objects to be sorted.
-     * @param descending  If true, sorts in descending order; otherwise, ascending.
+     * @param plantList The list of PlantModel objects to be sorted.
+     * @param descending If true, sorts in descending order; otherwise,
+     * ascending.
      * @return The sorted list of PlantModel objects.
      */
     public static List<PlantModel> sortByPrice(List<PlantModel> plantList, boolean descending) {

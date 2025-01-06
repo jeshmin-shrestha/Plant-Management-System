@@ -41,15 +41,15 @@ public class PlantManagementApp extends javax.swing.JFrame {
      * Creates new form PlantManagementapp
      */
     public PlantManagementApp() {
-        initComponents();
-        validationUtil = new ValidationUtil();
+        initComponents();// Initialize swing components
+        validationUtil = new ValidationUtil();// Initialzie validation for input checks
         initializeLayout(); // Set up CardLayout and add screens
         initializeData(); // Initialize plant data and table
         startProgress(); // Show loading screen and initiate progress
-        selectionSort = new SelectionSort();
-        mergeSort = new MergeSort();
-        insertionSort = new InsertionSort();
-        binarySearch = new BinarySearch();
+        selectionSort = new SelectionSort(); //Initialize SelectionSort algorithm
+        mergeSort = new MergeSort();//Initialize MergeSort algorithm
+        insertionSort = new InsertionSort();//Initialize InsertionSort algorithm
+        binarySearch = new BinarySearch();//Initialize BinarySort algorithm
 
     }
 
@@ -65,7 +65,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         jpnlLoginScreen = new javax.swing.JPanel();
         jPanelLoginPage = new javax.swing.JPanel();
         jLabelLogoLogin = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelLoginData = new javax.swing.JPanel();
         jLabelUsername = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jTxtFieldUsername = new javax.swing.JTextField();
@@ -163,9 +163,9 @@ public class PlantManagementApp extends javax.swing.JFrame {
         jPanelLoginPage.add(jLabelLogoLogin);
         jLabelLogoLogin.setBounds(940, 40, 247, 136);
 
-        jPanel2.setBackground(new java.awt.Color(59, 68, 41));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        jPanel2.setForeground(new java.awt.Color(153, 153, 153));
+        jPanelLoginData.setBackground(new java.awt.Color(59, 68, 41));
+        jPanelLoginData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
+        jPanelLoginData.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabelUsername.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelUsername.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,11 +177,6 @@ public class PlantManagementApp extends javax.swing.JFrame {
 
         jTxtFieldUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 10, true));
         jTxtFieldUsername.setMargin(new java.awt.Insets(10, 10, 10, 1000));
-        jTxtFieldUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtFieldUsernameActionPerformed(evt);
-            }
-        });
 
         btnlogin.setBackground(new java.awt.Color(0, 0, 0));
         btnlogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -208,19 +203,19 @@ public class PlantManagementApp extends javax.swing.JFrame {
             }
         });
 
-        jlabelLoginError.setBackground(new java.awt.Color(255, 51, 51));
+        jlabelLoginError.setBackground(new java.awt.Color(153, 153, 153));
         jlabelLoginError.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jlabelLoginError.setForeground(new java.awt.Color(204, 0, 0));
         jlabelLoginError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelLoginDataLayout = new javax.swing.GroupLayout(jPanelLoginData);
+        jPanelLoginData.setLayout(jPanelLoginDataLayout);
+        jPanelLoginDataLayout.setHorizontalGroup(
+            jPanelLoginDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLoginDataLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanelLoginDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLoginDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btnlogin, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                         .addComponent(jLabelPassword)
                         .addComponent(jLabelUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,13 +224,13 @@ public class PlantManagementApp extends javax.swing.JFrame {
                         .addComponent(jPasswordFieldPassword))
                     .addComponent(jCheckBoxShowPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(62, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanelLoginDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlabelLoginError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelLoginDataLayout.setVerticalGroup(
+            jPanelLoginDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLoginDataLayout.createSequentialGroup()
                 .addComponent(jlabelLoginError, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelUsername)
@@ -254,8 +249,8 @@ public class PlantManagementApp extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        jPanelLoginPage.add(jPanel2);
-        jPanel2.setBounds(400, 200, 410, 320);
+        jPanelLoginPage.add(jPanelLoginData);
+        jPanelLoginData.setBounds(400, 200, 410, 320);
 
         jLabelCopyWriteLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelCopyWriteLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -353,11 +348,6 @@ public class PlantManagementApp extends javax.swing.JFrame {
 
         jTextFieldPlantName.setToolTipText("");
         jTextFieldPlantName.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Plant Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(204, 204, 0))); // NOI18N
-        jTextFieldPlantName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPlantNameActionPerformed(evt);
-            }
-        });
         jPanelData.add(jTextFieldPlantName, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 240, 60));
 
         jTextFieldPlantId.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Plant Id", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(204, 204, 0))); // NOI18N
@@ -367,11 +357,6 @@ public class PlantManagementApp extends javax.swing.JFrame {
         jComboBoxPlantCategory.setForeground(new java.awt.Color(153, 153, 0));
         jComboBoxPlantCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Indoor", "Outdoor", "Flowering", "Non-Flowering" }));
         jComboBoxPlantCategory.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Plant Category", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(204, 204, 0))); // NOI18N
-        jComboBoxPlantCategory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxPlantCategoryActionPerformed(evt);
-            }
-        });
         jPanelData.add(jComboBoxPlantCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 210, 70));
 
         jComboBoxPlantGrowthStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -582,12 +567,6 @@ public class PlantManagementApp extends javax.swing.JFrame {
         jComboBoxSortOrder.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ascending", "Descending" }));
         jComboBoxSortOrder.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Order By", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Rounded MT Bold", 1, 12), new java.awt.Color(163, 182, 139))); // NOI18N
 
-        jTextFieldSearchBar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldSearchBarActionPerformed(evt);
-            }
-        });
-
         jButtonSearch.setBackground(new java.awt.Color(163, 182, 139));
         jButtonSearch.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jButtonSearch.setForeground(new java.awt.Color(255, 255, 255));
@@ -640,10 +619,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
             jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAdminControlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelAdminControlLayout.createSequentialGroup()
                         .addComponent(jLabelPlantTable, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextFieldSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAdminControlLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -666,7 +645,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
                 .addGroup(jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelAdminControlLayout.createSequentialGroup()
                         .addComponent(jScrollPanePlantTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 267, Short.MAX_VALUE))
                     .addComponent(jPanelData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -675,22 +654,22 @@ public class PlantManagementApp extends javax.swing.JFrame {
             .addGroup(jPanelAdminControlLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelPlantTable)
+                        .addComponent(jButtonResetTable, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSortByName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSortByPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSortPlantId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAdminControlLayout.createSequentialGroup()
-                        .addGroup(jPanelAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelPlantTable)
-                            .addComponent(jButtonResetTable, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSortByName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSortByPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSortPlantId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldSearchBar))
+                        .addComponent(jTextFieldSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAdminControlLayout.createSequentialGroup()
                         .addComponent(jComboBoxSortOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPanePlantTable, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanelData, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(215, 215, 215))
         );
@@ -889,10 +868,16 @@ public class PlantManagementApp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 // Method to initialize data, including plant list and table
+// Method to add Plant data to the table and update the table
 
-    // Method to add Plant data to the table and update the table
+    /**
+     * Registers a new plant into the system This method adds the given
+     * PlantModel instance to the plantList and updates the JTable
+     *
+     * @param plant the PlantModel object containing plant details to be added.
+     */
     private void registerPlant(PlantModel plant) {
-        //add Plant to the list
+        //Add Plant to the list
         plantList.add(plant);
         //Get the table Model
         DefaultTableModel model = (DefaultTableModel) jTablePlant.getModel();
@@ -903,6 +888,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
     }
 
     //Method to initialize the plant dta for the table(preloading with 5 sample data )
+    /**
+     * Initialize the plant data for the PlantManagement system PreLoads the
+     * system with five sample PlantModel objects and loads the table
+     */
     private void initializeData() {
         //Initialize the plant List
         plantList = new LinkedList();
@@ -912,18 +901,21 @@ public class PlantManagementApp extends javax.swing.JFrame {
         registerPlant(new PlantModel(1234578, "Snake Plant", "Indoor", "Budding", "Autumn", 10, 120.00, "2024-11-25"));
         registerPlant(new PlantModel(1234569, "Marigold", "Outdoor", "Sprouting", "Winter", 5, 130.00, "2024-11-26"));
         registerPlant(new PlantModel(1234570, "Rose", "Outdoor", "Flowering", "Spring", 11, 150.00, "2024-11-27"));
+        //update the total sales and stock displays
         totalSales();
         totalStock();
     }
 
-    /*
-    *
-     * Populates the JTable with the current list of plant records. Clears
-     * existing rows in the table model before adding new data.
+    /**
+     * Loads the provided list of plants into the JTable. Clears existing rows
+     * in the table model before adding new rows.
+     *
+     * @param plantList the list of PlantModel objects to be displayed in the
+     * table.
      */
     private void loadListToTable(List<PlantModel> plantList) {
+        //Get the table model
         DefaultTableModel model = (DefaultTableModel) jTablePlant.getModel();
-
         // Clear existing rows if needed
         model.setRowCount(0);
 
@@ -939,23 +931,29 @@ public class PlantManagementApp extends javax.swing.JFrame {
             plant.getPrice()
         }));
     }
-
-    private void jTxtFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtFieldUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtFieldUsernameActionPerformed
 //Action performed method for the login button
+
+    /**
+     * Handles the login button action event.
+     *
+     * @param evt The ActionEvent triggered when the login button is clicked.
+     */
+
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
 
-        // Get the username and password input by the user
-        System.out.println("Button Clicked");// check if the button works
-        String username = jTxtFieldUsername.getText();
+        System.out.println("Login Button Clicked");// check if the button works
+        String username = jTxtFieldUsername.getText();// retrives the username from the textfield
+        // Retrieve the password entered in the password field as a character array,
+        // then convert it to a String for comparison
         String password = new String(jPasswordFieldPassword.getPassword());
 
         // Check if username or password is empty
         if (username.isEmpty() || password.isEmpty()) {
+            //display an error message to inform user to fill in all fields
             jlabelLoginError.setText("Please enter your username and password.");
-        } // Check if username and password are incorrect
+        } // Validate the credentials  and if error display an error message
         else if (!username.equals("admin") || !password.equals("admin")) {
+            //Display an error message for incorrect credentials
             jlabelLoginError.setText("Username and password mismatch.");
         } // If credentials are correct, proceed to load the main screen
         else {
@@ -965,26 +963,36 @@ public class PlantManagementApp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnloginActionPerformed
 
 //action performed for the ters and conditions checkbox
+    /**
+     *  Action performed for the "Show Password" checkbox.
+     * @param evt the action event triggered when the checkbox is clicked.
+     */
     private void jCheckBoxShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxShowPasswordActionPerformed
-        // TODO add your handling code here:
+        // Check the visibility of password based on the checkbox state
         if (jCheckBoxShowPassword.isSelected())
-            jPasswordFieldPassword.setEchoChar((char) 0);
+            jPasswordFieldPassword.setEchoChar((char) 0);// show password characters
         else
-            jPasswordFieldPassword.setEchoChar('*');
+            jPasswordFieldPassword.setEchoChar('*'); // Mask the password 
     }//GEN-LAST:event_jCheckBoxShowPasswordActionPerformed
 //Action Performed for adding a new plant to the list
+    /**
+ * Action performed for adding a new plant to the list.
+ * 
+ * @param evt the action event triggered when the "Add Plant" button is clicked.
+ */
     private void jbtnAddPlantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAddPlantActionPerformed
+        //Reset the table view to remove any filteration in table
         resetTable();
         // Add plant after add new plant button is clicked
         boolean isValid = true;//initialize isvValid
         //Retrieve data from the Jtextfields
-        String plantId = jTextFieldPlantId.getText().trim();
-        String name = jTextFieldPlantName.getText().trim();
-        String category = String.valueOf(jComboBoxPlantCategory.getSelectedItem());
-        String growthStatus = String.valueOf(jComboBoxPlantGrowthStatus.getSelectedItem());
-        String plantBloomSeason = String.valueOf(jComboBoxPlantBloomSeason.getSelectedItem());
-        String stockQuantity = jTextFieldStockQuantity.getText().trim();
-        String priceText = jTextFieldPlantPrice.getText().trim();
+        String plantId = jTextFieldPlantId.getText().trim();// Get plant ID
+        String name = jTextFieldPlantName.getText().trim();// Get plant name
+        String category = String.valueOf(jComboBoxPlantCategory.getSelectedItem());// Get category 
+        String growthStatus = String.valueOf(jComboBoxPlantGrowthStatus.getSelectedItem());// Get growth status
+        String plantBloomSeason = String.valueOf(jComboBoxPlantBloomSeason.getSelectedItem());// Get blooming season
+        String stockQuantity = jTextFieldStockQuantity.getText().trim();// Get stock quantity
+        String priceText = jTextFieldPlantPrice.getText().trim();// Get price
         // Check for empty fields
         if (ValidationUtil.isNullOrEmpty(plantId)
                 || ValidationUtil.isNullOrEmpty(name)
@@ -992,7 +1000,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
                 || ValidationUtil.isNullOrEmpty(plantBloomSeason)
                 || ValidationUtil.isNullOrEmpty(stockQuantity)
                 || ValidationUtil.isNullOrEmpty(priceText)) {
-
+             //shows an error message when fileds are empty
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -1003,8 +1011,8 @@ public class PlantManagementApp extends javax.swing.JFrame {
                 jTextFieldPlantName, "Plant Name", lblErrorMsgPlantName, "Must be aplhabetic .",
                 errorColor, yellowColor, ValidationUtil.isValidName(jTextFieldPlantName.getText())
         );
-        //Validation for plant category 
 
+        //Validation for plant category 
         if (!ValidationUtil.isValidPlantCategory(category)) {
             JOptionPane.showMessageDialog(this, "Invalid category. Choose a valid option.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1031,6 +1039,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
             );
             // checking number formatexception
         } catch (NumberFormatException e) {
+            //Handle invalid price input
             validateField(jTextFieldPlantPrice, "Price", lblErrorMsgPlantPrice, "Must be a valid number.", errorColor, yellowColor, false);
             isValid = false;
         }
@@ -1038,13 +1047,14 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Validate plant ID
         int plantIdInt = 0;
         try {
-            plantIdInt = Integer.parseInt(plantId);
+            plantIdInt = Integer.parseInt(plantId); //Parse plant ID text to an integer
             isValid &= validateField(
                     jTextFieldPlantId, "Plant Id", lblErrorMsgPlantId, "Must be exactly 7 digits.",
                     errorColor, yellowColor, ValidationUtil.isValidPlantId(plantIdInt)
             );
 
         } catch (NumberFormatException e) {
+            // Handle invalid plant ID input
             validateField(jTextFieldPlantId, "Plant Id", lblErrorMsgPlantId, "Must be a valid number.", errorColor, yellowColor, false);
             isValid = false;
 
@@ -1053,8 +1063,9 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Validate stock quantity
         int stockQuantityInt = 0;
         try {
-            stockQuantityInt = Integer.parseInt(stockQuantity);
+            stockQuantityInt = Integer.parseInt(stockQuantity);// parse stock quantity to an integer
             isValid &= validateField(
+                     // Handle invalid stock quantity input
                     jTextFieldStockQuantity, "Plant Stock Quantity", lblErrorMsgStockQuantity, "Must be between a positive number.",
                     errorColor, yellowColor, ValidationUtil.isValidStockQuantity(stockQuantityInt)
             );
@@ -1063,6 +1074,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
             validateField(jTextFieldStockQuantity, "Plant Stock Quantity", lblErrorMsgStockQuantity, "Must be a valid number.", errorColor, yellowColor, false);
             isValid = false;
         }
+        // Check for duplicate Plant ID in the plant list
         for (PlantModel plant : plantList) {
             if (plant.getPlantId() == plantIdInt) {
                 // Show error if duplicate found
@@ -1097,6 +1109,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
             jComboBoxPlantCategory.setSelectedIndex(0);
             jComboBoxPlantGrowthStatus.setSelectedIndex(0);
             jComboBoxPlantBloomSeason.setSelectedIndex(0);
+            // Update total sales and stock data
             totalSales();
             totalStock();
             resetTable(); // Ensure the table is reset before adding
@@ -1104,14 +1117,18 @@ public class PlantManagementApp extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jbtnAddPlantActionPerformed
-
+/**
+ * Action performed when the "Update" button is clicked.
+ * 
+ * @param evt the action event triggered when the button is clicked.
+ */
     private void jbtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnupdateActionPerformed
         // Reset all fields and error labels
         resetField(jTextFieldPlantId, lblErrorMsgPlantId, "Plant ID");
         resetField(jTextFieldPlantName, lblErrorMsgPlantName, "Plant Name");
         resetField(jTextFieldStockQuantity, lblErrorMsgStockQuantity, "Stock Quantity");
         resetField(jTextFieldPlantPrice, lblErrorMsgPlantPrice, "Price");
-
+        // Reset the table to clear any previous data
         resetTable();
         // Retrieve plant data from textfields
         boolean isValid = true;
@@ -1135,15 +1152,19 @@ public class PlantManagementApp extends javax.swing.JFrame {
         }
 
         // Validate fields one by one
+        //validate plantName
         isValid &= validateField(jTextFieldPlantName, "Plant Name", lblErrorMsgPlantName, "Must be alphabetic.", errorColor, yellowColor, ValidationUtil.isValidName(name));
+        //validate plant Category
         if (!ValidationUtil.isValidPlantCategory(category)) {
             JOptionPane.showMessageDialog(this, "Invalid category. Choose a valid option.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+         //validate growth status
         if (!ValidationUtil.isValidGrowthStatus(growthStatus)) {
             JOptionPane.showMessageDialog(this, "Invalid growth status. Choose a valid option.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        //Validate bloom season
         if (!ValidationUtil.isValidPlantBloomSeason(plantBloomSeason)) {
             JOptionPane.showMessageDialog(this, "Invalid blooming season. Choose a valid option.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1152,7 +1173,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Validate price
         double price = 0.0;
         try {
-            price = Double.parseDouble(priceText);
+            price = Double.parseDouble(priceText);//parse price into integer
             isValid &= validateField(jTextFieldPlantPrice, "Price", lblErrorMsgPlantPrice, "Must be a positive number.", errorColor, yellowColor, ValidationUtil.isValidPrice(price));
         } catch (NumberFormatException e) {
             validateField(jTextFieldPlantPrice, "Price", lblErrorMsgPlantPrice, "Must be a valid number.", errorColor, yellowColor, false);
@@ -1162,7 +1183,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Validate plant ID
         int plantIdInt = 0;
         try {
-            plantIdInt = Integer.parseInt(plantId);
+            plantIdInt = Integer.parseInt(plantId);//parse plant id  into integer
             isValid &= validateField(jTextFieldPlantId, "Plant ID", lblErrorMsgPlantId, "Must be exactly 7 digits.", errorColor, yellowColor, ValidationUtil.isValidPlantId(plantIdInt));
         } catch (NumberFormatException e) {
             validateField(jTextFieldPlantId, "Plant ID", lblErrorMsgPlantId, "Must be a valid number.", errorColor, yellowColor, false);
@@ -1172,7 +1193,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Validate stock quantity
         int stockQuantityInt = 0;
         try {
-            stockQuantityInt = Integer.parseInt(stockQuantity);
+            stockQuantityInt = Integer.parseInt(stockQuantity);//parse stock quantity into integer
             isValid &= validateField(jTextFieldStockQuantity, "Plant Stock Quantity", lblErrorMsgStockQuantity, "Must be a positive number.", errorColor, yellowColor, ValidationUtil.isValidStockQuantity(stockQuantityInt));
         } catch (NumberFormatException e) {
             validateField(jTextFieldStockQuantity, "Plant Stock Quantity", lblErrorMsgStockQuantity, "Must be a valid number.", errorColor, yellowColor, false);
@@ -1190,10 +1211,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         boolean found = false;
         int selectedRow = jTablePlant.getSelectedRow();
 
-//        if (selectedRow == -1) {
-//            JOptionPane.showMessageDialog(this, "No row selected. Please select a row to update.", "Error", JOptionPane.ERROR_MESSAGE);
-//            return;
-//        }
+       // Confirm whether the user wants to update the plant data
         int choice = JOptionPane.showConfirmDialog(null, "Do you really want to update?", "Confirmation", JOptionPane.YES_NO_OPTION);
 
         if (choice == JOptionPane.YES_OPTION) {
@@ -1247,8 +1265,8 @@ public class PlantManagementApp extends javax.swing.JFrame {
                     // Success message
                     JOptionPane.showMessageDialog(this, "Plant record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 
-                    totalSales();
-                    totalStock();
+                    totalSales();// Update total sales data
+                    totalStock();// Update total stock data
                     resetTable(); // Ensure the table is reset 
                 }
 
@@ -1264,12 +1282,17 @@ public class PlantManagementApp extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jbtnupdateActionPerformed
-
+/**
+ * Handles mouse click on the update button for double-click functionality.
+ * If a row in the table is double-clicked, its data is loaded into the input fields for updating.
+ * 
+ * @param evt the mouse event triggered by the user double-clicking the row.
+ */
     private void jbtnupdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnupdateMouseClicked
         // Handle mouse click on update for double click 
-        if (evt.getClickCount() == 2) {
-            int selectedRow = jTablePlant.getSelectedRow();
-            if (selectedRow != -1) {
+        if (evt.getClickCount() == 2) {  // Check if the click count is 2 (double-click)
+            int selectedRow = jTablePlant.getSelectedRow();// Get the selected row in the table
+            if (selectedRow != -1) {// Ensure a row is selected
                 // Load data from the selected row into the text fields
                 jTextFieldPlantId.setText(jTablePlant.getValueAt(selectedRow, 0).toString());
                 jTextFieldPlantName.setText(jTablePlant.getValueAt(selectedRow, 1).toString());
@@ -1283,9 +1306,15 @@ public class PlantManagementApp extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jbtnupdateMouseClicked
-
+/**
+ * Action performed when the clear button is clicked.
+ * Resets all fields, combo boxes, and error labels to their default values.
+ * 
+ * @param evt the action event triggered by the "Clear" button click.
+ */
     private void jbtnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnClearActionPerformed
-        resetTable();
+        resetTable();// Reset the table to clear any selections
+        // Show a confirmation dialog before clearing all fields
         int choice = JOptionPane.showConfirmDialog(null, "Do you really want to update?", "Confirmation", JOptionPane.YES_NO_OPTION);
 
         if (choice == JOptionPane.YES_OPTION) {
@@ -1308,19 +1337,29 @@ public class PlantManagementApp extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jbtnClearActionPerformed
+    /**
+ * Resets the appearance of a text field and hides its associated error label.
+ * 
+ * @param textField the text field to reset
+ * @param errorLbl the error label associated with the text field
+ * @param fieldName the name of the field (used for resetting title or border)
+ */
     private void resetField(JTextField textField, JLabel errorLbl, String fieldName) {
-        textField.setBorder(createTitledBorder(null, fieldName));  // Reset border to default (null or no color)
+        textField.setBorder(createTitledBorder(null, fieldName));  // Reset border to default (null / no color)
         errorLbl.setVisible(false);  // Hide error label
     }
+    /**
+     * Action performed when the delete button is clicked
+     * @param evt handles he process of deleting a plant data
+     */
     private void jbtndDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtndDeleteActionPerformed
-        //action performed when delete button clicked
 
         // Reset all fields and error labels
         resetField(jTextFieldPlantId, lblErrorMsgPlantId, "Plant ID");
         resetField(jTextFieldPlantName, lblErrorMsgPlantName, "Plant Name");
         resetField(jTextFieldStockQuantity, lblErrorMsgStockQuantity, "Stock Quantity");
         resetField(jTextFieldPlantPrice, lblErrorMsgPlantPrice, "Price");
-        resetTable();
+        resetTable();// Clear the displayed table data
 
         // Retrieve plant data from jtextfield
         boolean isValid = true;
@@ -1335,7 +1374,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Validate plant ID
         int plantIdInt = 0;
         try {
-            plantIdInt = Integer.parseInt(plantId);
+            plantIdInt = Integer.parseInt(plantId);// parse Plant ID to integer
             isValid &= validateField(jTextFieldPlantId, "Plant ID", lblErrorMsgPlantId, "Must be exactly 7 digits.", errorColor, yellowColor, ValidationUtil.isValidPlantId(plantIdInt));
         } catch (NumberFormatException e) {
             validateField(jTextFieldPlantId, "Plant ID", lblErrorMsgPlantId, "Must be a valid number.", errorColor, yellowColor, false);
@@ -1344,11 +1383,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
 
         // Check if the Plant ID exists in the table
         DefaultTableModel model = (DefaultTableModel) jTablePlant.getModel();
-        boolean found = false;
         // Check if the Plant ID exists in the plantList
         boolean existsInPlantList = false;
         PlantModel plantToDelete = null;
-
+// Search through the plant list to find the matching Plant ID
         for (PlantModel plant : plantList) {
             if (plant.getPlantId() == plantIdInt) {
                 existsInPlantList = true;
@@ -1356,7 +1394,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
                 break;
             }
         }
-
+  // If Plant ID is not found in the list, show an error
         if (!existsInPlantList) {
             JOptionPane.showMessageDialog(this, "Plant ID not found in the records. Cannot delete.", "Delete Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1392,20 +1430,16 @@ public class PlantManagementApp extends javax.swing.JFrame {
             jComboBoxPlantCategory.setSelectedIndex(0);
             jComboBoxPlantGrowthStatus.setSelectedIndex(0);
             jComboBoxPlantBloomSeason.setSelectedIndex(0);
+            // Update the total sales and stock values
             totalSales();
             totalStock();
             resetTable(); // Ensure the table is reset
         }
     }//GEN-LAST:event_jbtndDeleteActionPerformed
-
-    private void jComboBoxPlantCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPlantCategoryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxPlantCategoryActionPerformed
-
-    private void jTextFieldPlantNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPlantNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPlantNameActionPerformed
-
+/**
+ * Action performed when the mouse is clicked on the plant table.
+ * @param evt  handles the updating of input fields when a row is double-clicked in the table.
+ */
     private void jTablePlantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePlantMouseClicked
         // Handle mouse click on update for double click 
         if (evt.getClickCount() == 2) {
@@ -1426,6 +1460,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
     }//GEN-LAST:event_jTablePlantMouseClicked
 
 //action performed when sendFeedback button is performed
+    /**
+     * Action performed when the Send Feedback button is clicked
+     * @param evt  handles the process of validating the feedback submission
+     */
     private void jButtonSendFeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendFeedbackActionPerformed
 
         // Get the username and password input
@@ -1446,7 +1484,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
             jTextAreaMessageFeedback.setText("");// Clear Message jTextField
         }
     }//GEN-LAST:event_jButtonSendFeedbackActionPerformed
-
+/**
+ *  Action performed when the "Manage Plant Home" button is clicked
+ * @param evt  handles switching from homepage top the admin control page
+ */
     private void jButtonManagePlantHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonManagePlantHomeActionPerformed
         // Action handling when manage plant button clicked switch to admin panel
         try {
@@ -1457,6 +1498,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonManagePlantHomeActionPerformed
 //Action performed for logout button
+    /**
+     * Action performed for the "Logout" button
+     * @param evt handles logout confirmation from mainPanel  to LogIn Page
+     */
     private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
 // Confirm Logout action with a dialog
         int choice = JOptionPane.showConfirmDialog(null, "Do you want to logout?",
@@ -1471,16 +1516,19 @@ public class PlantManagementApp extends javax.swing.JFrame {
             loadScreen("LoginScreen"); // Load the main screen after logout
         }
     }//GEN-LAST:event_btnlogoutActionPerformed
-
+/**
+ * Action performed when the "Sort by Plant ID" button is clicked
+ * @param evt handles sorting of plant data based on PlantId on ascending and descending
+ */
     private void jButtonSortPlantIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSortPlantIdActionPerformed
-        // TODO add your handling code here:
+        // Prints if the button was clicked
         System.out.println("Sort Button Clicked");
         // Get the selected sort order from the combo box
         String selectedOrder = (String) jComboBoxSortOrder.getSelectedItem();
         // Declare a variable for sorted list
         List<PlantModel> sortedList;
 
-// Check the selected order and sort accordingly
+       // Check the selected order and sort accordingly
         if (selectedOrder.equals("Ascending")) {
             sortedList = selectionSort.sortByPlantId(plantList, false); // Ascending order
         } else if (selectedOrder.equals("Descending")) {
@@ -1492,81 +1540,72 @@ public class PlantManagementApp extends javax.swing.JFrame {
 
         loadListToTable(sortedList);
     }//GEN-LAST:event_jButtonSortPlantIdActionPerformed
-
-    private void jTextFieldSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSearchBarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldSearchBarActionPerformed
-
+/**
+ * Action performed when the Search button is clicked
+ * @param evt handles binary search by sorting the PlantName first then searches
+ */
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
-        String searchId = jTextFieldSearchBar.getText();
-        jLabelSearch.setText("");  // Clear the previous error message
+          // Get the search input from the search bar
+        String searchName = jTextFieldSearchBar.getText();
+        jLabelSearch.setText(""); // Clear the previous error message
+
         // Check if the input is empty
-        if (ValidationUtil.isNullOrEmpty(searchId)) {
-            jLabelSearch.setText("Please enter a Plant ID to search.");
+        if (ValidationUtil.isNullOrEmpty(searchName)) {
+            jLabelSearch.setText("Please enter a Plant Name to search.");
             return;
         }
-        try {
-            int plantId = Integer.parseInt(searchId);  // Parse the entered Plant ID
-            PlantModel foundPlant = null;
 
-            // Search for the plant with the entered ID in the list
-            for (PlantModel plant : plantList) {
-                if (plant.getPlantId() == plantId) {
-                    foundPlant = plant;
-                    break;
-                }
-            }
+        //  Ensure the plant list is sorted (ascending order)
+        MergeSort mergeSort = new MergeSort();
+        List<PlantModel> sortedPlantList = mergeSort.mergeSortByPlantName(plantList, false);
 
-            // If the plant is found, display it in the table
-            if (foundPlant != null) {
-                // Create a new list with only the found plant to display
-                List<PlantModel> resultList = new ArrayList<>();
-                resultList.add(foundPlant);
-                loadListToTable(resultList);  // Load the result list into the table
-            } else if (!ValidationUtil.isValidSearchId(Integer.parseInt(searchId))) {
-                jLabelSearch.setText("Enter exactly 7 digits.");
-                jLabelSearch.setVisible(true);  // Show the error message label
+        // Perform binary search on the sorted list
+        BinarySearch binarySearch = new BinarySearch();
+        PlantModel foundPlant = binarySearch.searchByPlantName(searchName, sortedPlantList, 0, sortedPlantList.size() - 1);
 
-            } else {
-                // If no plant is found with the entered ID
-                jLabelSearch.setText("No plant found with ID: " + plantId);
-                jLabelSearch.setVisible(true);  // Show the error message label
-            }
-
-        } catch (NumberFormatException ex) {
-            jLabelSearch.setText("Search Result: Invalid ID format.");
+        //  Display the search result
+        if (foundPlant != null) {
+            // If the plant is found, show it in the table
+            List<PlantModel> resultList = new ArrayList<>();
+            resultList.add(foundPlant);
+            loadListToTable(resultList); // Load the result list into the table
+        } else {
+            // If no plant is found with the entered name
+            jLabelSearch.setText("No plant found with Name: " + searchName);
+            jLabelSearch.setVisible(true); // Show the error message label
         }
     }//GEN-LAST:event_jButtonSearchActionPerformed
-
+/**
+ * Action performed when the Sort by Name button is clicked
+ * @param evt handles sorting of Plant data by PlantName based on ascending or descending
+ */
     private void jButtonSortByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSortByNameActionPerformed
-        // TODO add your handling code here:
+        //Prints if teh button was clicked
         System.out.println("Sort By Name Button Clicked");
-
+// Get the selected sort order from the combo box
         String selectedOrder = (String) jComboBoxSortOrder.getSelectedItem();
+         // Declare a variable for the sorted list
         List<PlantModel> sortedList;
-
+// Check the selected sort order and perform sorting accordingly
         if (selectedOrder.equals("Ascending")) {
+            // Sort the list by plant name in ascending order
             sortedList = mergeSort.mergeSortByPlantName(plantList, false); // Ascending
         } else if (selectedOrder.equals("Descending")) {
+            // Sort the list by plant name in descending order
             sortedList = mergeSort.mergeSortByPlantName(plantList, true); // Descending
         } else {
-            return; // Handle invalid selection
+            return; // exit if  invalid selection
         }
-
+        // Load the sorted list to the table
         loadListToTable(sortedList);
 
-
     }//GEN-LAST:event_jButtonSortByNameActionPerformed
-
-    private void jButtonResetTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetTableActionPerformed
-        // Get the model of the table
-        resetTable(); // Ensure the table is reset 
-        jLabelSearch.setText(" ");
-        jTextFieldSearchBar.setText("");
-    }//GEN-LAST:event_jButtonResetTableActionPerformed
-
+/**
+ * Action performed when the "Sort by Price" button is clicked
+ * @param evt handles sorting of Plant data by PlantPrice based on ascending or descending
+ */
     private void jButtonSortByPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSortByPriceActionPerformed
-        // Debug message to indicate button click
+        // Prints if the button was clicked
         System.out.println("Sort By Price Button Clicked");
 
         // Get the selected sort order from the dropdown
@@ -1581,8 +1620,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Perform sorting based on the selected order
         List<PlantModel> sortedList;
         if (selectedOrder.equals("Ascending")) {
+         //sorts the list by price in ascending order    
             sortedList = InsertionSort.sortByPrice(plantList, false); // Ascending order
         } else if (selectedOrder.equals("Descending")) {
+            //sorts the list by price in ascending order  
             sortedList = InsertionSort.sortByPrice(plantList, true); // Descending order
         } else {
             JOptionPane.showMessageDialog(this, "Invalid sort order selected.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1592,8 +1633,21 @@ public class PlantManagementApp extends javax.swing.JFrame {
         // Reload the sorted list into the table
         loadListToTable(sortedList);
     }//GEN-LAST:event_jButtonSortByPriceActionPerformed
+/**
+ * // Action performed when the "Reset Table" button is clicked
+ * @param evt handles resetting the table modified by sorting or searching
+ */
+    private void jButtonResetTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetTableActionPerformed
+        // Get the model of the table
+        resetTable(); // Ensure the table is reset
+        jLabelSearch.setText(" ");//ensure searchLabel is reset
+        jTextFieldSearchBar.setText("");//ensure searchbar is reset
+    }//GEN-LAST:event_jButtonResetTableActionPerformed
 
-    // Method to reset the table with the data from plantList
+ 
+    /**
+     *  Method to reset the table with the data from plantList
+     */
     private void resetTable() {
         // Get the model of the table
         DefaultTableModel model = (DefaultTableModel) jTablePlant.getModel();
@@ -1615,8 +1669,10 @@ public class PlantManagementApp extends javax.swing.JFrame {
             });
         }
     }
-//Initalize the layout for the application
 
+/**
+ * Initalize the layout for the application
+ */
     private void initializeLayout() {
         // Create a CardLayout to manage different screens (panels)
         cardLayout = new java.awt.CardLayout();
@@ -1753,8 +1809,12 @@ public class PlantManagementApp extends javax.swing.JFrame {
     private void loadScreen(String screenName) {
         cardLayout.show(getContentPane(), screenName);
     }
-    // Main method to launch the application
-
+    
+/**
+ * Main method to launch the application
+ * This method initializes the application displays the main window
+ * @param args handles the transition of the whole system
+ */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1837,13 +1897,13 @@ public class PlantManagementApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelUsernameError;
     private javax.swing.JLabel jLabelUsernameFeedBack;
     private javax.swing.JLabel jLabelWelcomeHome;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelAboutUs;
     private javax.swing.JPanel jPanelAdminControl;
     private javax.swing.JPanel jPanelDashboard;
     private javax.swing.JPanel jPanelData;
     private javax.swing.JPanel jPanelFeedbackForm;
     private javax.swing.JPanel jPanelHomePage;
+    private javax.swing.JPanel jPanelLoginData;
     private javax.swing.JPanel jPanelLoginPage;
     private javax.swing.JPasswordField jPasswordFieldPassword;
     private javax.swing.JProgressBar jProgressBarLoadingScreen;

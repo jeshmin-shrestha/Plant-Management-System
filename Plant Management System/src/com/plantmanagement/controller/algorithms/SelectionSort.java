@@ -3,10 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.SelectionSort to edit this template
  */
 package com.plantmanagement.controller.algorithms;
+
 import com.PlantManagement.model.PlantModel;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  *
@@ -14,13 +14,15 @@ import java.util.List;
  * LUMID 23048596
  */
 public class SelectionSort {
+
     List<PlantModel> plantSortList;
-    
-    public SelectionSort(){
-    plantSortList=new ArrayList<>();
-    
-}
- /**
+
+    public SelectionSort() {
+        plantSortList = new ArrayList<>();
+
+    }
+
+    /**
      * Sorts a list of PlantModel objects by their Plant ID in ascending or
      * descending order.
      *
@@ -28,8 +30,8 @@ public class SelectionSort {
      * @param isDesc specifies the sort order (true for descending, false for
      * ascending)
      * @return the sorted list
-     */   
-    public List<PlantModel> sortByPlantId(List<PlantModel> plantList,boolean isDesc){
+     */
+    public List<PlantModel> sortByPlantId(List<PlantModel> plantList, boolean isDesc) {
         this.plantSortList.clear();
         this.plantSortList.addAll(plantList);
         if (plantSortList == null || plantSortList.isEmpty()) {
@@ -45,6 +47,7 @@ public class SelectionSort {
 
         return plantSortList;
     }
+
     /**
      * Finds the index of the extremum value (minimum or maximum) in the list
      * from the start index.

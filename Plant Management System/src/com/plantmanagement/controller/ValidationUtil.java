@@ -21,7 +21,7 @@ public class ValidationUtil {
     private static final Pattern STOCKQUANTITY_PATTERN = Pattern.compile("^\\d+$");
     private static final Pattern ADDEDDATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     private static final Pattern BLOOM_PATTERN = Pattern.compile("^(Summer|Winter|Autumn|Spring|Year Round)$");
-    private static final Pattern SEARCH_PATTERN=Pattern.compile("^\\d{7}$");
+    private static final Pattern SEARCH_PATTERN=Pattern.compile("^[a-zA-Z]+( [a-zA-Z]+)*$");
     /**
      * Validates if a string is null or empty.
      *
@@ -150,13 +150,13 @@ public class ValidationUtil {
         }
     }
     /**
-     * Validates if the Plant ID is exactly 7 digits.
+     * Validates if the Plant Name is alphabetic.
      *
-     * @param searchId the Plant ID to validate
+     * @param searchName the Plant name to validate
      * @return true if valid, otherwise false
      */
-    public static boolean isValidSearchId(int searchId) {
-        return SEARCH_PATTERN.matcher(String.valueOf(searchId)).matches();// Checks if plant ID matches the 7-digit format
+    public static boolean isValidSearchName(int searchName) {
+        return SEARCH_PATTERN.matcher(String.valueOf(searchName)).matches();// Checks if plant ID matches the 7-digit format
     }
 
 

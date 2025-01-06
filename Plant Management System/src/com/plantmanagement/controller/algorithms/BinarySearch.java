@@ -3,45 +3,50 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
  */
 package com.plantmanagement.controller.algorithms;
+
 import com.PlantManagement.model.PlantModel;
 
 import java.util.List;
+
 /**
  *
- * @author Jeshmin Shrestha 
+ * @author Jeshmin Shrestha
  * LUMID 23048596
  */
 
 public class BinarySearch {
 
-   /**
-     * Sorts a list of PlantModel objects by plantId and then performs a binary search.
-     *
-     * @param plantList The list of PlantModel objects.
-     * @param plantId   The plantId to search for.
-     * @return The PlantModel object if found; otherwise, null.
+    // Method to perform binary search on a sorted list of plants by name
+    /**
+     * 
+     * @param searchValue the name of the plant to search for (case-insensitive)
+     * @param plantList the list of plants, which should be sorted by plant name
+     * @param left the starting index of the search range (inclusive)
+     * @param right the ending index of the search range (inclusive)
+     * @return the `PlantModel` object that matches the search value, or `null` if not found
      */
-    public PlantModel binarySearchByIdWithSorting(List<PlantModel> plantList, int plantId) {
-        // Step 1: Sort the list by plantId
-        plantList.sort((a, b) -> Integer.compare(a.getPlantId(), b.getPlantId()));
-
-        // Step 2: Perform binary search
-        int low = 0;
-        int high = plantList.size() - 1;
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            PlantModel midPlant = plantList.get(mid);
-
-            if (midPlant.getPlantId() == plantId) {
-                return midPlant; // Plant found
-            } else if (midPlant.getPlantId() < plantId) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
+    public PlantModel searchByPlantName(String searchValue, List<PlantModel> plantList,
+            int left, int right) {
+        // Base case: If the range is invalid, return null (not found)
+        if (right < left) {
+            return null;
         }
 
-        return null; // Plant not found
+        // Calculate the middle index
+        int mid = (left + right) / 2;
+
+        // Compare the search value with the plant name at the mid-point
+        int comparison = searchValue.compareToIgnoreCase(plantList.get(mid).getPlantName());
+
+        if (comparison == 0) {
+            // If the search value matches the mid-point plant name, return the plant
+            return plantList.get(mid);
+        } else if (comparison < 0) {
+            // If the search value is smaller, search the left half
+            return searchByPlantName(searchValue, plantList, left, mid - 1);
+        } else {
+            // If the search value is larger, search the right half
+            return searchByPlantName(searchValue, plantList, mid + 1, right);
+        }
     }
 }
