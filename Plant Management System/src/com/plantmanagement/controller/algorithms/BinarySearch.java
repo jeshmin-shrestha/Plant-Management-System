@@ -9,15 +9,17 @@ import com.PlantManagement.model.PlantModel;
 import java.util.List;
 
 /**
- *
+ *Implements the Binary Search  to search from list of PlantModel objects 
+ * by their Plant Name 
  * @author Jeshmin Shrestha
  * LUMID 23048596
  */
 
 public class BinarySearch {
 
-    // Method to perform binary search on a sorted list of plants by name
     /**
+     * 
+     * Method to perform binary search on a sorted list of plants by name
      * 
      * @param searchValue the name of the plant to search for (case-insensitive)
      * @param plantList the list of plants, which should be sorted by plant name
@@ -27,6 +29,9 @@ public class BinarySearch {
      */
     public PlantModel searchByPlantName(String searchValue, List<PlantModel> plantList,
             int left, int right) {
+        if (plantList == null || plantList.isEmpty()) {
+    return null;
+}
         // Base case: If the range is invalid, return null (not found)
         if (right < left) {
             return null;

@@ -9,8 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Jeshmin Shrestha 
+ * Implements the Selection Sort algorithm to sort a list of PlantModel objects 
+ * by their Plant ID in either ascending or descending order.
+ * 
+ * @author Jeshmin Shrestha
  * LUMID 23048596
  */
 public class SelectionSort {
@@ -82,7 +84,11 @@ public class SelectionSort {
      * otherwise
      */
     private boolean shouldSwap(int current, int extremum, boolean isDesc) {
-        return isDesc ? current > extremum : current < extremum;
+        if (isDesc) {
+            return current > extremum;// For descending, return true if current is greater than extremum
+        } else {
+            return current < extremum;// For ascending, return true if current is less than extremum
+        }
     }
 
     /**

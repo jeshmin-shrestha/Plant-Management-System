@@ -3,7 +3,13 @@ package com.plantmanagement.controller.algorithms;
 import com.PlantManagement.model.PlantModel;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Implements the InsertionSort algorithm to sort a list of PlantModel objects 
+ * by their Plant Price in either ascending or descending order.
+ * 
+ * @author Jeshmin Shrestha
+ * LUMID 23048596
+ */
 public class InsertionSort {
 
     /**
@@ -17,6 +23,10 @@ public class InsertionSort {
     public static List<PlantModel> sortByPrice(List<PlantModel> plantList, boolean descending) {
         // Create a copy of the input list to avoid modifying the original
         List<PlantModel> sortedList = new ArrayList<>(plantList);
+      
+        if (plantList == null || plantList.isEmpty()) {
+            throw new IllegalArgumentException("Plant list cannot be null or empty.");
+        }
 
         // Perform Insertion Sort
         for (int i = 1; i < sortedList.size(); i++) {

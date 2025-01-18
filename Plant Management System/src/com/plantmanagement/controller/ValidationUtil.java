@@ -2,9 +2,6 @@
 package com.plantmanagement.controller;
 
 import javax.swing.JOptionPane;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.regex.Pattern;
 /**
  *
@@ -19,7 +16,6 @@ public class ValidationUtil {
     private static final Pattern GROWTHSTATUS_PATTERN = Pattern.compile("^(Sprouting|Budding|Flowering|Fruiting|Dormant)$");
     private static final Pattern PRICE_PATTERN = Pattern.compile("^\\d+(\\.\\d{1,2})?$");
     private static final Pattern STOCKQUANTITY_PATTERN = Pattern.compile("^\\d+$");
-    private static final Pattern ADDEDDATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     private static final Pattern BLOOM_PATTERN = Pattern.compile("^(Summer|Winter|Autumn|Spring|Year Round)$");
     private static final Pattern SEARCH_PATTERN=Pattern.compile("^[a-zA-Z]+( [a-zA-Z]+)*$");
     /**
@@ -76,7 +72,8 @@ public class ValidationUtil {
     public static boolean isValidPlantBloomSeason(String plantBloomSeason) {
         if(!BLOOM_PATTERN.matcher(String.valueOf(plantBloomSeason)).matches()){
             // Show error message if the blooming season is invalid
-            JOptionPane.showMessageDialog(null, "Plant BloomingSeason must be 'Summer', 'Winter', 'Spring','Autumn'or 'Year Round'.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Plant BloomingSeason must be 'Summer', 'Winter', 'Spring','Autumn'or 'Year Round'.", "Invalid Input", 
+                    JOptionPane.ERROR_MESSAGE);
             return false; // Return false for invalid bloom season
         }
         return true; // Return true for valid bloom season
@@ -90,7 +87,8 @@ public class ValidationUtil {
     public static boolean isValidGrowthStatus(String growthStatus) {
         if(!GROWTHSTATUS_PATTERN.matcher(String.valueOf(growthStatus)).matches()){
              // Show error message if the growth status is invalid
-            JOptionPane.showMessageDialog(null, "Growth Stage must be 'Sprouting', 'Budding', 'Flowering', 'Fruiting', or 'Dormant'.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Growth Stage must be 'Sprouting', 'Budding', 'Flowering', 'Fruiting', or 'Dormant'.", "Invalid Input", 
+                    JOptionPane.ERROR_MESSAGE);
             return false;// Return false for invalid growth statu
         }
         return true;  // Return true for valid growth status 
@@ -105,7 +103,8 @@ public class ValidationUtil {
     public static boolean isValidPrice(double price) {
     if (price <= 0 || !PRICE_PATTERN.matcher(String.valueOf(price)).matches()) {
         // Show error message if the price is invalid
-            JOptionPane.showMessageDialog(null, "Price must be a positive number with up to two decimal places.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Price must be a positive number with up to two decimal places.", "Invalid Input", 
+                    JOptionPane.ERROR_MESSAGE);
             return false;// Return false for invalid price
         }
         return true;// Return true for valid price

@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ *Implements the MergeSort algorithm to sort a list of PlantModel objects 
+ * by their Plant Name in either ascending or descending order.
+ * 
  * @author Jeshmin Shrestha
  * LUMID 23048596
  */
@@ -24,6 +26,10 @@ public class MergeSort {
      * @return The sorted list of PlantModel objects.
      */
     public List<PlantModel> mergeSortByPlantName(List<PlantModel> plantList, boolean descending) {
+        if (plantList == null || plantList.isEmpty()) {
+            throw new IllegalArgumentException("Plant list cannot be null or empty.");
+        }
+
         if (plantList.size() <= 1) {
             return plantList;
         }
