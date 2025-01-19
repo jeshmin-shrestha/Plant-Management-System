@@ -1707,6 +1707,9 @@ public class PlantManagementApp extends javax.swing.JFrame {
      */
     private void jButtonUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUndoActionPerformed
         // Check if there's anything in the undo stack
+         int choice = JOptionPane.showConfirmDialog(null, "Do you really want to undo the deletion?", "Confirmation", JOptionPane.YES_NO_OPTION);
+
+        if (choice == JOptionPane.YES_OPTION) {
         if (!undoStack.isEmpty()) {
             PlantModel restoredPlant = undoStack.pop();  // Retrieve the last deleted plant
             plantList.add(restoredPlant); // Add back to the plant list
@@ -1728,6 +1731,7 @@ public class PlantManagementApp extends javax.swing.JFrame {
         totalSales();
         totalStock();
         resetTable(); // Ensure the table is reset
+        }
     }//GEN-LAST:event_jButtonUndoActionPerformed
 
     /**
